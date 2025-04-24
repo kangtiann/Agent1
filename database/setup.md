@@ -1,0 +1,4 @@
+# ClickHouse
+
+clickhouse server --daemon
+
