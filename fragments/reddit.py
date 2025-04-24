@@ -1,4 +1,5 @@
 import praw
+import os
 from datetime import datetime
 
 
@@ -29,10 +30,10 @@ def format_post(reddit, post):
 class Reddit:
     def __init__(self):
         self.client = praw.Reddit(
-            client_id="cT98TYVZoS2uRQ8cVMqnZA",
-            client_secret="-SZyCnVaXiMEoFKLdvRLHJdnpJwt3w",
-            username="kangtian1024",
-            password="940425Kang",
+            client_id=os.environ.get("REDDIT_CLIENT_ID"),
+            client_secret=os.environ.get("REDDIT_CLIENT_SECRET"),
+            username=os.environ.get("REDDIT_USERNAME"),
+            password=os.environ.get("REDDIT_PASSWORD"),
             user_agent="testscript by u/kangtian1024",
         )
 
